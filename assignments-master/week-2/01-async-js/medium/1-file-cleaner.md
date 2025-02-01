@@ -1,0 +1,1 @@
+## File cleaner Read a file, remove all the extr a spaces and wr t e it b ack to the same file. For examp le, if the file input w as `hello world my name is raman` After the program r uns, the output should be ` hello world my name is aman`

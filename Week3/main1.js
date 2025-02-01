@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://admin:9P%40LwV9Z6Sgh_VE@cluster0.mc4hu.mongodb.net/usersappnew");
+mongoose.connect("");
 
 const User = mongoose.model('Users', {name: String, email: String, password: String}); // this defines a document structure using schema
 

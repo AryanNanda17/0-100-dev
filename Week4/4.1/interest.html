@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        async function fn(){
+
+            const a = parseInt(document.getElementById("principal").value);
+            const b = parseInt(document.getElementById("rate").value);
+            const c = parseInt(document.getElementById("time").value);
+            const response = await await fetch("https://sum-server.100xdevs.com/interest?principal=" + a + "&rate=" + b + "&time=" + c);
+            const ans = await response.text();
+            document.getElementById("finalOutput").innerHTML = "yo";
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input id="principal" type="text" placeholder="Principal"> 
+    </div>
+    <div>
+        <input id="rate" type="text" placeholder="Rate">
+    </div>
+    <div>
+        <input id="time" type="text" placeholder="Time">
+    </div>
+    <div>
+        <button onclick="fn()"> Calcuate SI</button>
+    </div>
+    <div id="finalOutput"></div>
+</body>
+</html>

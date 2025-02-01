@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        let timeout;
+        function fn1(){
+            // If fn§ hasn't been called for 100ms then call fn automatically. 
+            // If during this 100ms another call to fn1 is made then clearout the prev clock and make new one. 
+            // This is implementation of debouncing. 
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                fn();
+            }, 1000);
+        }
+        function fn(){
+            const a = parseInt(document.getElementById("firstnumber").value);
+            const b = parseInt(document.getElementById("secondnumber").value);
+            const result = a+b;
+            document.getElementById("finalOutput").innerHTML = result;
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input oninput="fn1()" id="firstnumber" type="text" placeholder="first number"> 
+    </div>
+    <div>
+        <input oninput="fn1()" id="secondnumber" type="text" placeholder="second number">
+    </div>
+    <div id="finalOutput"></div>
+</body>
+</html>
